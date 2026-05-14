@@ -52,6 +52,7 @@
     "ios",
     "android",
     "src",
-    "app.plugin.js"
+    "app.plugin.js",
+    "expo-module.config.json"
   ]
 }
