@@ -123,7 +123,7 @@ public class OpenWearablesModule: Module {
 
         // MARK: - Logs
         Function("setLogLevel") { (levelId: Int) in
-            let level = OWLogLevel(rawValue: levelId) ?? .always
+            let level = OWLogLevel(rawValue: levelId) ?? .debug
             OpenWearablesHealthSDK.shared.setLogLevel(level)
         }
 

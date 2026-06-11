@@ -10,7 +10,7 @@ It is a wrapper for the native iOS and Android SDKs to allow React Native apps t
 | Platform | Status                                                                        |
 | -------- | ----------------------------------------------------------------------------- |
 | iOS      | Implemented (via `OpenWearablesHealthSDK` CocoaPod, requires iOS 15.1+)       |
-| Android  | Implemented (via Maven Local dependency `com.openwearables.health:sdk:0.6.0`) |
+| Android  | Implemented (via Maven Local dependency `com.openwearables.health:sdk:0.11.1`) |
 
 ## Installation
 
@@ -67,7 +67,7 @@ cd ios && pod install
 The Android implementation currently relies on a local Maven dependency:
 
 ```
-implementation("com.openwearables.health:sdk:0.6.0")
+implementation("com.openwearables.health:sdk:0.11.1")
 ```
 
 To test the Android integration using `mavenLocal`, please refer to the setup instructions in the example app:

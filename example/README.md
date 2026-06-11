@@ -84,7 +84,7 @@ cd open_wearables_android_sdk
 2. From the root of that repository, publish the SDK to Maven Local:
 
 ```sh
-git checkout v0.6.0
+git checkout v0.11.1
 ./gradlew publishToMavenLocal
 ```
 

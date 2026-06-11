@@ -85,17 +85,15 @@ export function LogsScreen({ logs, onClearLogs, onBack }: LogsScreenProps) {
         />
       </View>
 
-      {/* Log level selector (iOS only) */}
-      {Platform.OS === "ios" && (
-        <View style={styles.logLevelContainer}>
-          <Text style={styles.logLevelLabel}>Log Level</Text>
-          <OptionSelector
-            options={LOG_LEVEL_OPTIONS}
-            selectedId={String(logLevel)}
-            onSelect={handleLogLevelSelect}
-          />
-        </View>
-      )}
+      {/* Log level selector */}
+      <View style={styles.logLevelContainer}>
+        <Text style={styles.logLevelLabel}>Log Level</Text>
+        <OptionSelector
+          options={LOG_LEVEL_OPTIONS}
+          selectedId={String(logLevel)}
+          onSelect={handleLogLevelSelect}
+        />
+      </View>
 
       {/* Log list */}
       <FlatList
