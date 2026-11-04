@@ -9,7 +9,7 @@ It is a wrapper for the native iOS and Android SDKs to allow React Native apps t
 
 | Platform | Status                                                                        |
 | -------- | ----------------------------------------------------------------------------- |
-| iOS      | Implemented (via `OpenWearablesHealthSDK` CocoaPod, requires iOS 15.1+)       |
+| iOS      | Implemented (via `OpenWearablesHealthSDK` CocoaPod, requires iOS 16.4+)       |
 | Android  | Implemented (via Maven Local dependency `com.openwearables.health:sdk:0.11.2`) |
 
 ## Migration to 0.2.0
