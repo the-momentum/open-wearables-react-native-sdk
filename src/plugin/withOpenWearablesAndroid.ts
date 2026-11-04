@@ -1,4 +1,7 @@
-import { ManifestActivity } from "@expo/config-plugins/build/android/Manifest";
+import {
+  ManifestActivity,
+  ManifestActivityAlias,
+} from "@expo/config-plugins/build/android/Manifest";
 import { ConfigPlugin, withAndroidManifest } from "expo/config-plugins";
 
 const withOpenWearablesAndroid: ConfigPlugin = (config) => {
@@ -19,7 +22,7 @@ const withOpenWearablesAndroid: ConfigPlugin = (config) => {
       )
     );
 
-    const aliasesToAdd = [];
+    const aliasesToAdd: ManifestActivityAlias[] = [];
 
     if (!existingAliases.has("ViewPermissionUsageActivity")) {
       aliasesToAdd.push({

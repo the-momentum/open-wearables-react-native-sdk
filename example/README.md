@@ -17,7 +17,7 @@ The app shows how to:
 
 - Node.js 18+
 - Xcode 15+
-- iOS 15.1+
+- iOS 16.4+
 - Expo CLI
 
 ---
