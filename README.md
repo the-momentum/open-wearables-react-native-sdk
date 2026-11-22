@@ -10,7 +10,16 @@ It is a wrapper for the native iOS and Android SDKs to allow React Native apps t
 | Platform | Status                                                                        |
 | -------- | ----------------------------------------------------------------------------- |
 | iOS      | Implemented (via `OpenWearablesHealthSDK` CocoaPod, requires iOS 16.4+)       |
-| Android  | Implemented (via Maven Local dependency `com.openwearables.health:sdk:0.11.2`) |
+| Android  | Implemented (via Maven Local dependency `com.openwearables.health:sdk:0.13.3`) |
+
+## Changes in 0.3.0
+
+The native SDKs are bumped to iOS `0.16.0` and Android `0.13.3`. The JS API is unchanged.
+
+`signOut()` now tells the backend that the user disconnected: before clearing local state it sends
+`DELETE {host}/api/v1/users/{userId}/connections/{provider}` (`apple` on iOS, `google` or `samsung`
+on Android). The call is best effort with a 10s timeout - a network error or rejection still signs
+the user out locally, and nothing is sent when there is no session.
 
 ## Migration to 0.2.0
 
@@ -100,7 +109,7 @@ cd ios && pod install
 The Android implementation currently relies on a local Maven dependency:
 
 ```
-implementation("com.openwearables.health:sdk:0.11.2")
+implementation("com.openwearables.health:sdk:0.13.3")
 ```
 
 To test the Android integration using `mavenLocal`, please refer to the setup instructions in the example app:
@@ -182,7 +191,9 @@ Signs in a user. `accessToken`, `refreshToken`, and `apiKey` are optional.
 
 #### `signOut(): void`
 
-Signs out the current user.
+Signs out the current user. Reports the disconnect to the backend
+(`DELETE /users/{userId}/connections/{provider}`) before clearing the session, stops sync and
+clears all local state.
 
 #### `updateTokens(accessToken: string, refreshToken: string | null): void`
 
